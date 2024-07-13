@@ -4,12 +4,10 @@
 ### LiveISO
 1. Удаляем все существующие разделы
 ```bash
-    echo -e "g\nn\n\n\n+1G\nt\n1\nn\n\n\n\nw" | fdisk /dev/nvme0n1
-    echo -e "g\nn\n\n\n\nw" | fdisk /dev/sda
-    echo -e "g\nn\n\n\n\nw" | fdisk /dev/sdb
-    pvcreate /dev/sda1 /dev/sdb1
-    vgcreate sdgroup /dev/sda1 /dev/sdb1
-    lvcreate -i 2 -I 64 -l 100%FREE -n homeland sdgroup
+    wipefs --all /dev/nvme0n1
+    vgchange -an
+    wipefs --all /dev/sda
+    wipefs --all /dev/sdb
 ```
 2. Создаем разделы
 ```bash
