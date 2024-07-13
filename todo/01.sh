@@ -1,3 +1,3 @@
 #! /bin/bash
-cp $USER/sxbox/user/xinitrc ~/.xinitrc
-cp $USER/sxbox/user/Xresources ~/.Xresources
+cp sxbox/user/xinitrc ~/.xinitrc
+cp sxbox/user/Xresources ~/.Xresources
