@@ -93,7 +93,16 @@
 ```
 
 ### Первый запуск
-Клонируем репозиторий
+1. Графика (Nvidia)
+```bash
+    sudo pacman -Syu nvidia nvidia-utils vulkan-icd-loader lib32-nvidia-utils lib32-vulkan-icd-loader opencl-nvidia lib32-opencl-nvidia
+```
+2. X11
+```bash
+    sudo pacman -S xorg xorg-server xorg-xinit xorg-xrandr xdotool numlockx
+``` 
+3. Перенос настроек
 ```bash
     git clone https://github.com/statix05/sxbox
+    chmod +x sxbox/todo/01.sh && sudo sxbox/todo/01.sh
 ```
