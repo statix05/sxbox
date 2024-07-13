@@ -8,6 +8,8 @@
     vgchange -an
     sgdisk --zap-all /dev/sda
     sgdisk --zap-all /dev/sdb
+    dd if=/dev/zero of=/dev/sda bs=1M count=10
+    dd if=/dev/zero of=/dev/sdb bs=1M count=10
 ```
 2. Создаем разделы
 ```bash
