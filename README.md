@@ -4,10 +4,10 @@
 ### LiveISO
 1. Удаляем все существующие разделы
 ```bash
-    wipefs --all /dev/nvme0n1
+    sgdisk --zap-all /dev/nvme0n1
     vgchange -an
-    wipefs --all /dev/sda
-    wipefs --all /dev/sdb
+    sgdisk --zap-all /dev/sda
+    sgdisk --zap-all /dev/sdb
 ```
 2. Создаем разделы
 ```bash
