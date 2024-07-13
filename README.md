@@ -104,5 +104,5 @@
 3. Перенос настроек
 ```bash
     git clone https://github.com/statix05/sxbox
-    chmod +x sxbox/todo/01.sh && sudo sxbox/todo/01.sh
+    chmod +x sxbox/todo/01.sh && sxbox/todo/01.sh
 ```
