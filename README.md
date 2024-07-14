@@ -104,5 +104,16 @@
 3. Перенос настроек
 ```bash
     git clone https://github.com/statix05/sxbox
-    chmod +x sxbox/todo/01.sh && sxbox/todo/01.sh
+    chmod +x sxbox/todo/01.sh && ./sxbox/todo/01.sh
+```
+4. Настройка для ZSH
+```bash
+    sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+    git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+    git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+    sed -i 's/plugins=(git)/plugins=(git zsh-autosuggestions zsh-syntax-highlighting)/' ~/.zshrc
+    git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+    ~/.fzf/install
+    sed -i 's/ZSH_THEME="robbyrussell"/ZSH_THEME="af-magic"/' ~/.zshrc 
+    echo "setopt CORRECT" >> ~/.zshrc && exec zsh
 ```
