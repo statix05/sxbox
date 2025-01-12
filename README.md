@@ -32,8 +32,8 @@
 ```
 4. Создаем SWAP-файл
 ```bash
-    cd /mnt/home && fallocate -l 24G .swapfile
-    dd if=/dev/zero of=/mnt/home/.swapfile bs=1G count=24 status=progress
+    cd /mnt/home && fallocate -l 32G .swapfile
+    dd if=/dev/zero of=/mnt/home/.swapfile bs=1G count=32 status=progress
     chmod 600 /mnt/home/.swapfile
     mkswap /mnt/home/.swapfile
     swapon /mnt/home/.swapfile && cd
