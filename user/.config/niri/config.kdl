@@ -1,0 +1,66 @@
+# Niri configuration - Catppuccin Mocha + RU/US + Fuzzel on Mod+Space
+
+# Input configuration: Mod key and keyboard layouts
+input {
+    # Place Mod to the left of Space depends on hardware; here we set logical Mod
+    # Mod will be Super on TTY and Alt when nested by default. We can force it:
+    mod-key "Super"
+    mod-key-nested "Alt"
+
+    keyboard {
+        # XKB setup: US first (latin for binds), RU second
+        xkb {
+            layout "us,ru"
+            variant ""
+            # Switch layout by Mod+Space (Windows/Super + Space)
+            options "grp:win_space_toggle"
+        }
+        # Tuning
+        repeat-delay 600
+        repeat-rate 25
+    }
+}
+
+# Bindings: Fuzzel on Mod+Space, common essentials
+binds {
+    # Launcher on Mod + Space
+    Mod+Space { spawn "fuzzel"; }
+
+    # Terminal on Mod + Enter (adjust to your terminal)
+    Mod+Return { spawn "alacritty"; }
+
+    # Exit Niri
+    Mod+Shift+E { action "quit"; }
+}
+
+# Layout and appearance tuned to Catppuccin Mocha palette
+# https://catppuccin.com/palette#mocha
+layout {
+    gaps 12
+
+    # Workspace background (base)
+    background-color "#1e1e2e"
+
+    # Window border
+    border {
+        width 2
+        active-color "#89b4fa"   # Blue
+        inactive-color "#585b70" # Surface2
+        urgent-color "#f38ba8"   # Red
+        # Example gradient (disabled):
+        # active-gradient from="#89b4fa" to="#b4befe" angle=90 in="oklch longer hue"
+    }
+
+    # Focus ring for active window
+    focus-ring {
+        width 4
+        active-color "#cba6f7"   # Mauve
+        inactive-color "#45475a" # Surface1
+        urgent-color "#f38ba8"
+    }
+
+    # Tab indicator styling (if using tabs)
+    tab-indicator {
+        corner-radius 8
+    }
+}
