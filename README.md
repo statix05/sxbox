@@ -4,6 +4,7 @@
 ### LiveISO
 1. Удаляем все существующие разделы
 ```bash
+    wipefs -a /dev/sda /dev/sdb /dev/nvme0n1
     sgdisk --zap-all /dev/nvme0n1
     vgchange -an
     sgdisk --zap-all /dev/sda
